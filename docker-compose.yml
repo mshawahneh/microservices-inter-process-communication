@@ -1,0 +1,63 @@
+version: '3.7'
+services:
+      
+  experiment-discovery-service:
+    image: experiment-discovery-service
+    ports:
+      - "8301:8301"
+      
+  experiment-api-gateway:
+    image: experiment-api-gateway
+    ports:
+      - "80:80"
+    depends_on:
+      - experiment-discovery-service
+      
+  experiment-micro-service1:
+    image: experiment-micro-service1
+    ports:
+      - "8758:8758"
+    depends_on:
+      - experiment-discovery-service
+  
+   experiment-micro-service2:
+    image:  experiment-micro-service2
+    ports:
+      - "8755:8755"
+    depends_on:
+      - experiment-discovery-service
+
+   experiment-micro-service3:
+    image:  experiment-micro-service3
+    ports:
+      - "8754:8754"
+    depends_on:
+      - experiment-discovery-service
+        
+   experiment-micro-service4:
+    image:  experiment-micro-service4
+    ports:
+      - "8752:8752"
+    depends_on:
+      - experiment-discovery-service
+        
+   experiment-micro-service5:
+    image:  experiment-micro-service5
+    ports:
+      - "8756:8756"
+    depends_on:
+      - experiment-discovery-service
+      
+   experiment-micro-service6:
+    image: experiment-micro-service6
+    ports:
+      - "8757:8757"
+    depends_on:
+      - experiment-discovery-service
+      
+   experiment-micro-service7:
+    image: experiment-micro-service7
+    ports:
+      - "8758:8758"
+    depends_on:
+      - experiment-discovery-service

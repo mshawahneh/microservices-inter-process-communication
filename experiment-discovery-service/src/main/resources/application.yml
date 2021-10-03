@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: dpms-discovery-service
+  profiles:
+    active: @activeProfile@
+  main:
+    banner-mode: "off"
+    
+server:
+  port: 8301
+
+logging:
+  level:
+    .: INFO
+    org.springframework: INFO
+    org.hibernate.stat: INFO
+    org.hibernate.type: INFO
+    com.cisco: INFO
+  file:
+    name: /opt/dpms/logs/dpms-discovery.log
+    max-history: 20 
+   
+---
+
+spring:
+  profiles: dev
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+
+---
+
+spring:
+  profiles: prod
+
+eureka:
+  instance:
+    hostname: dpms-discovery-service
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+
+---
+
+spring:
+  profiles: stage
+
+eureka:
+  instance:
+    hostname: dpms-discovery-service
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 0

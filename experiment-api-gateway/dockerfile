@@ -1,0 +1,5 @@
+FROM openjdk:13-jdk-alpine
+ADD target/dpms-api-gateway.jar dpms-api-gateway.jar
+MAINTAINER Mohammad Shawahneh <mshawahn@cisco.com>
+EXPOSE 80
+ENTRYPOINT ["java","-jar","dpms-api-gateway.jar"]

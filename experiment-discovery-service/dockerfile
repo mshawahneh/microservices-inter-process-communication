@@ -1,0 +1,5 @@
+FROM openjdk:13-jdk-alpine
+ADD target/dpms-discovery-service.jar dpms-discovery-service.jar
+MAINTAINER Mohammad Shawahneh <mshawahn@cisco.com>
+EXPOSE 8301
+ENTRYPOINT ["java","-jar","dpms-discovery-service.jar"]

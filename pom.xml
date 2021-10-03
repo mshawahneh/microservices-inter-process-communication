@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.12.RELEASE</version>
+		<relativePath />
+		<!-- lookup parent from repository -->
+	</parent>
+	<groupId>org.bzu.exp</groupId>
+	<artifactId>experiment-services</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Experiment</name>
+	<description>Experiment</description>
+	<packaging>pom</packaging>
+	<properties>
+		<activeProfile>stage</activeProfile>
+		<skip-docker>true</skip-docker>
+		<dbHost>localhost</dbHost>
+	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>docker-build</id>
+						<phase>install</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>docker</executable>
+							<workingDirectory>${project.basedir}</workingDirectory>
+							<arguments>
+								<argument>build</argument>
+								<argument>-t</argument>
+								<argument>${project.artifactId}</argument>
+								<argument>.</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<skip>${skip-docker}</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>experiment-micro-service1</module>
+		<module>experiment-micro-service2</module>
+		<module>experiment-micro-service3</module>
+		<module>experiment-micro-service4</module>
+		<module>experiment-micro-service5</module>
+		<module>experiment-micro-service6</module>
+		<module>experiment-micro-service7</module>
+		<module>experiment-api-gateway</module>
+		<module>experiment-discovery-service</module>
+		
+	</modules>
+</project>

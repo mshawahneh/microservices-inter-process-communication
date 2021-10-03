@@ -1,2 +1,2 @@
-# user-microservice
-A microservice responsible about managing users' information
+# microservice-Communication-experiment
+A microservices applcation for scientific purposes of introducing a framework towards optimal inter-process communication performance. 

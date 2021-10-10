@@ -3,10 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.12.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>org.bzu.exp</groupId>
+		<artifactId>experiment-services</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.bzu.exp</groupId>
 	<artifactId>exp-api-gateway</artifactId>
@@ -66,7 +65,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>dpms-api-gateway</finalName>
+		<finalName>exp-api-gateway</finalName>
 	</build>
 
 	<repositories>

@@ -2,7 +2,7 @@ spring:
   application:
     name: exp-discovery-service
   profiles:
-    active: dev
+    active: @activeProfile@
   main:
     banner-mode: "off"
     
@@ -40,22 +40,6 @@ eureka:
 
 spring:
   profiles: prod
-
-eureka:
-  instance:
-    hostname: exp-discovery-service
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    wait-time-in-ms-when-sync-empty: 0
-
----
-
-spring:
-  profiles: stage
 
 eureka:
   instance:

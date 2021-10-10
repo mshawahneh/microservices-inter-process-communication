@@ -18,8 +18,8 @@
 	<packaging>pom</packaging>
 	<properties>
 		<activeProfile>dev</activeProfile>
-		<skip-docker>true</skip-docker>
-		<dbHost>localhost</dbHost>
+		<skip-docker>false</skip-docker>
+		<expHost>localhost</expHost>
 	</properties>
 	
 	<build>
@@ -55,14 +55,14 @@
 	</build>
 	<modules>
 		<module>experiment-micro-service1</module>
-		<module>experiment-micro-service2</module>
-		<module>experiment-micro-service3</module>
-		<module>experiment-micro-service4</module>
-		<module>experiment-micro-service5</module>
-		<module>experiment-micro-service6</module>
-		<module>experiment-micro-service7</module>
-		<module>experiment-api-gateway</module>
-		<module>experiment-discovery-service</module>
+<!-- 		<module>experiment-micro-service2</module> -->
+<!-- 		<module>experiment-micro-service3</module> -->
+<!-- 		<module>experiment-micro-service4</module> -->
+<!-- 		<module>experiment-micro-service5</module> -->
+<!-- 		<module>experiment-micro-service6</module> -->
+<!-- 		<module>experiment-micro-service7</module> -->
+<!-- 		<module>experiment-api-gateway</module> -->
+<!-- 		<module>experiment-discovery-service</module> -->
 		
 	</modules>
 </project>

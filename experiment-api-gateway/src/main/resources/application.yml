@@ -1,8 +1,8 @@
 spring:
   application:
-    name: dpms-gateway-service
+    name: exp-gateway-service
   profiles:
-    active: @activeProfile@
+    active: dev
   main:
     banner-mode: "off"
 
@@ -15,9 +15,9 @@ logging:
     org.springframework: INFO
     org.hibernate.stat: INFO
     org.hibernate.type: INFO
-    com.cisco: INFO
+    org.bzu.exp: INFO
   file:
-    name: /opt/dpms/logs/dpms-api-gateway.log
+    name: /opt/exp/logs/exp-api-gateway.log
     max-history: 20 
 
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 600000
@@ -28,35 +28,36 @@ ribbon:
 ---
 
 spring:
-  profiles: "stage"
+  profiles: "dev"
   
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://dpms-discovery-service:8301/eureka/
+      defaultZone: http://exp-discovery-service:8301/eureka/
   instance:
-    hostname: dpms-api-gateway
+    hostname: exp-api-gateway
 zuul:
   host:
     connect-timeout-millis: 180000
     connection-request-timeout-millis: 180000
     socket-timeout-millis: 180000
   routes:
-    device-support-service:
-      path: /device-support-service/**
-    documentation-service:
-      path: /documentation-service/** 
-    feature-service:
-      path: /feature-service/**
-    team-service:
-      path: /team-service/**
-    testing-service:
-      path: /testing-service/**
-    dpms-ui-service:
-      path: /**
-      strip-prefix: true
+    exp-mservice1:
+      path: /exp-mservice1/**
+    exp-mservice2:
+      path: /exp-mservice2/** 
+    exp-mservice3:
+      path: /exp-mservice3/**
+    exp-mservice4:
+      path: /exp-mservice4/**
+    exp-mservice5:
+      path: /exp-mservice5/**
+    exp-mservice6:
+      path: /exp-mservice6/**
+    exp-mservice7:
+      path: /exp-mservice7/** 
               
 ---
 
@@ -68,33 +69,29 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://dpms-discovery-service:8301/eureka/
+      defaultZone: http://exp-discovery-service:8301/eureka/
   instance:
-    hostname: dpms-api-gateway
-
-ribbon:
-   ReadTimeout: 180000
-   connection-timeout: 180000
-   
+    hostname: exp-api-gateway
 zuul:
   host:
     connect-timeout-millis: 180000
     connection-request-timeout-millis: 180000
     socket-timeout-millis: 180000
   routes:
-    device-support-service:
-      path: /device-support-service/**
-    documentation-service:
-      path: /documentation-service/** 
-    feature-service:
-      path: /feature-service/**
-    team-service:
-      path: /team-service/**
-    testing-service:
-      path: /testing-service/**
-    dpms-ui-service:
-      path: /**
-      strip-prefix: true
+    exp-mservice1:
+      path: /exp-mservice1/**
+    exp-mservice2:
+      path: /exp-mservice2/** 
+    exp-mservice3:
+      path: /exp-mservice3/**
+    exp-mservice4:
+      path: /exp-mservice4/**
+    exp-mservice5:
+      path: /exp-mservice5/**
+    exp-mservice6:
+      path: /exp-mservice6/**
+    exp-mservice7:
+      path: /exp-mservice7/** 
  
 ---
 
@@ -106,30 +103,26 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://dpms-discovery-service:8301/eureka/
+      defaultZone: http://exp-discovery-service:8301/eureka/
   instance:
-    hostname: dpms-api-gateway
-
-ribbon:
-   ReadTimeout: 180000
-   connection-timeout: 180000
-   
+    hostname: exp-api-gateway
 zuul:
   host:
     connect-timeout-millis: 180000
     connection-request-timeout-millis: 180000
     socket-timeout-millis: 180000
   routes:
-    device-support-service:
-      path: /device-support-service/**
-    documentation-service:
-      path: /documentation-service/** 
-    feature-service:
-      path: /feature-service/**
-    team-service:
-      path: /team-service/**
-    testing-service:
-      path: /testing-service/**
-    dpms-ui-service:
-      path: /**
-      strip-prefix: true
+    exp-mservice1:
+      path: /exp-mservice1/**
+    exp-mservice2:
+      path: /exp-mservice2/** 
+    exp-mservice3:
+      path: /exp-mservice3/**
+    exp-mservice4:
+      path: /exp-mservice4/**
+    exp-mservice5:
+      path: /exp-mservice5/**
+    exp-mservice6:
+      path: /exp-mservice6/**
+    exp-mservice7:
+      path: /exp-mservice7/** 

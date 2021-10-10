@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: "dev"
+    active: @activeProfile@
   application:    name: exp-mservice1
   main:
     banner-mode: "off"
@@ -23,7 +23,7 @@ logging:
     org.springframework: DEBUG
     org.hibernate.stat: DEBUG
     org.hibernate.type: INFO
-    com.bzu: DEBUG
+    org.bzu.exp: DEBUG
   file:    name: experiment.log
     path: /opt/exp/logs
     max-history: 20       

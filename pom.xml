@@ -17,7 +17,7 @@
 	<description>Experiment</description>
 	<packaging>pom</packaging>
 	<properties>
-		<activeProfile>stage</activeProfile>
+		<activeProfile>dev</activeProfile>
 		<skip-docker>true</skip-docker>
 		<dbHost>localhost</dbHost>
 	</properties>

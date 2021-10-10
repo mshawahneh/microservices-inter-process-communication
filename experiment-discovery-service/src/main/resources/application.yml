@@ -1,8 +1,8 @@
 spring:
   application:
-    name: dpms-discovery-service
+    name: experiment-discovery-service
   profiles:
-    active: @activeProfile@
+    active: dev
   main:
     banner-mode: "off"
     
@@ -15,9 +15,9 @@ logging:
     org.springframework: INFO
     org.hibernate.stat: INFO
     org.hibernate.type: INFO
-    com.cisco: INFO
+    org.bzu.exp: INFO
   file:
-    name: /opt/dpms/logs/dpms-discovery.log
+    name: /opt/exp/logs/exp-discovery.log
     max-history: 20 
    
 ---

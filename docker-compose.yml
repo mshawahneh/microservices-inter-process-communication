@@ -20,42 +20,41 @@ services:
     depends_on:
       - exp-mservice-discovery
   
-   exp-mservice2:
+  exp-mservice2:
     image:  exp-mservice2
     ports:
       - "8002:8002"
     depends_on:
       - exp-mservice-discovery
-
-   exp-mservice3:
+      
+  exp-mservice3:
     image:  exp-mservice3
     ports:
       - "8003:8003"
     depends_on:
       - exp-mservice-discovery
         
-   exp-mservice4:
+  exp-mservice4:
     image:  exp-mservice4
     ports:
       - "8004:8004"
     depends_on:
       - exp-mservice-discovery
-        
-   exp-mservice5:
+  exp-mservice5:
     image:  exp-mservice5
     ports:
       - "8005:8005"
     depends_on:
       - exp-mservice-discovery
       
-   exp-mservice6:
+  exp-mservice6:
     image: exp-mservice6
     ports:
       - "8006:8006"
     depends_on:
       - exp-mservice-discovery
       
-   exp-mservice7:
+  exp-mservice7:
     image: exp-mservice7
     ports:
       - "8007:8007"

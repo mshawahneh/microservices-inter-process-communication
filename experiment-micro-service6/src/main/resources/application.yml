@@ -1,7 +1,7 @@
 spring:
   profiles:
     active: "dev"
-  application:    name: exp-mservice1
+  application:    name: exp-mservice6
   main:
     banner-mode: "off"
   jpa:    hibernate:      ddl-auto: create-drop
@@ -26,7 +26,7 @@ logging:
     com.bzu: DEBUG
   file:    name: experiment.log
     path: /opt/exp/logs
-    max-history: 20 
+    max-history: 20 
 eureka:
   client:
     service-url:

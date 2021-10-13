@@ -1,6 +1,6 @@
 spring:
   application:
-    name: exp-gateway-service
+    name: exp-mservice-gateway
   profiles:
     active: @activeProfile@
   main:
@@ -15,29 +15,29 @@ logging:
     org.springframework: INFO
     org.hibernate.stat: INFO
     org.hibernate.type: INFO
-    org.bzu.exp: INFO
+    org.bzu.exp: DEBUG
   file:
-    name: /opt/exp/logs/exp-api-gateway.log
+    name: /opt/exp/logs/exp-mservice-gateway.log
     max-history: 20 
 
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 600000
 ribbon:
    ReadTimeout: 180000
    connection-timeout: 180000
-    
----
 
-spring:
-  profiles: "dev"
-  
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://exp-discovery-service:8301/eureka/
+      defaultZone: http://@eurekaHost@:8301/eureka/
   instance:
-    hostname: exp-api-gateway
+    hostname: exp-mservice-gateway    
+---
+
+spring:
+  profiles: "dev"
+
 zuul:
   host:
     connect-timeout-millis: 180000
@@ -64,14 +64,6 @@ zuul:
 spring:
   profiles: prod
      
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://exp-discovery-service:8301/eureka/
-  instance:
-    hostname: exp-api-gateway
 zuul:
   host:
     connect-timeout-millis: 180000

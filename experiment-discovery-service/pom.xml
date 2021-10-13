@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.bzu.exp</groupId>
-	<artifactId>exp-discovery-service</artifactId>
+	<artifactId>exp-mservice-discovery</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>exp-discovery-service</name>
 	<description>Service registry </description>

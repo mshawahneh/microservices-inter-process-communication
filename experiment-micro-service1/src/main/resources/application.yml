@@ -41,8 +41,15 @@ spring:
       path: /h2-console
       settings:        trace: false
         web-allow-others: false
-  
-  kafka:    bootstrap-servers: localhost:9092    consumer:      group-id: dpms-group 
+     
+  kafka:    bootstrap-servers: localhost:9092    consumer:      group-id: dpms-group
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: http://@eurekaHost@:8301/eureka/
+  instance:
+    hostname: exp-mservice1 
 ---
 
 spring:
@@ -59,5 +66,11 @@ spring:
     generate-ddl: true
     show-sql: true
     database: postgresql
-    
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://@eurekaHost@:8301/eureka/
+  instance:
+    hostname: exp-mservice1     
      

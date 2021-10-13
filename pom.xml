@@ -19,7 +19,8 @@
 	<properties>
 		<activeProfile>dev</activeProfile>
 		<skip-docker>false</skip-docker>
-		<expHost>localhost</expHost>
+		<dbHost>localhost</dbHost>
+		<eurekaHost>exp-mservice-discovery</eurekaHost>
 	</properties>
 	
 	<build>

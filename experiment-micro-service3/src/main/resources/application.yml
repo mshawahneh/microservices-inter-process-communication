@@ -26,7 +26,14 @@ logging:
     com.bzu: DEBUG
   file:    name: experiment.log
     path: /opt/exp/logs
-    max-history: 20       
+    max-history: 20 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://@eurekaHost@:8301/eureka/
+  instance:
+    hostname: exp-mservice3 
+          
 ---
 
 spring:

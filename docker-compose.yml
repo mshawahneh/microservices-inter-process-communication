@@ -1,63 +1,63 @@
 version: '3.7'
 services:
       
-  experiment-discovery-service:
-    image: experiment-discovery-service
+  exp-mservice-discovery:
+    image: exp-mservice-discovery
     ports:
       - "8301:8301"
       
   experiment-api-gateway:
-    image: experiment-api-gateway
+    image: exp-mservice-gateway
     ports:
       - "80:80"
     depends_on:
-      - experiment-discovery-service
+      - exp-mservice-discovery
       
-  experiment-micro-service1:
-    image: experiment-micro-service1
+  exp-mservice1:
+    image: exp-mservice1
     ports:
-      - "8758:8758"
+      - "8001:8001"
     depends_on:
-      - experiment-discovery-service
+      - exp-mservice-discovery
   
-   experiment-micro-service2:
-    image:  experiment-micro-service2
+   exp-mservice2:
+    image:  exp-mservice2
     ports:
-      - "8755:8755"
+      - "8002:8002"
     depends_on:
-      - experiment-discovery-service
+      - exp-mservice-discovery
 
-   experiment-micro-service3:
-    image:  experiment-micro-service3
+   exp-mservice3:
+    image:  exp-mservice3
     ports:
-      - "8754:8754"
+      - "8003:8003"
     depends_on:
-      - experiment-discovery-service
+      - exp-mservice-discovery
         
-   experiment-micro-service4:
-    image:  experiment-micro-service4
+   exp-mservice4:
+    image:  exp-mservice4
     ports:
-      - "8752:8752"
+      - "8004:8004"
     depends_on:
-      - experiment-discovery-service
+      - exp-mservice-discovery
         
-   experiment-micro-service5:
-    image:  experiment-micro-service5
+   exp-mservice5:
+    image:  exp-mservice5
     ports:
-      - "8756:8756"
+      - "8005:8005"
     depends_on:
-      - experiment-discovery-service
+      - exp-mservice-discovery
       
-   experiment-micro-service6:
-    image: experiment-micro-service6
+   exp-mservice6:
+    image: exp-mservice6
     ports:
-      - "8757:8757"
+      - "8006:8006"
     depends_on:
-      - experiment-discovery-service
+      - exp-mservice-discovery
       
-   experiment-micro-service7:
-    image: experiment-micro-service7
+   exp-mservice7:
+    image: exp-mservice7
     ports:
-      - "8758:8758"
+      - "8007:8007"
     depends_on:
-      - experiment-discovery-service
+      - exp-mservice-discovery

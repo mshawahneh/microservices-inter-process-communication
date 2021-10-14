@@ -1,6 +1,6 @@
 spring:
   application:
-    name: @eurekaHost@
+    name: exp-mservice-discovery
   profiles:
     active: @activeProfile@
   main:
@@ -22,7 +22,7 @@ logging:
 
 eureka:
   instance:
-    hostname: @eurekaHost@
+    hostname: exp-mservice-discovery
   client:
     registerWithEureka: false
     fetchRegistry: false

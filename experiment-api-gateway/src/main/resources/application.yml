@@ -32,11 +32,7 @@ eureka:
     service-url:
       defaultZone: http://@eurekaHost@:8301/eureka/
   instance:
-    hostname: exp-mservice-gateway    
----
-
-spring:
-  profiles: "dev"
+    hostname: exp-mservice-gateway
 
 zuul:
   host:
@@ -58,30 +54,14 @@ zuul:
       path: /exp-mservice6/**
     exp-mservice7:
       path: /exp-mservice7/** 
-              
+    
+---
+
+
+spring:
+  profiles: "dev"
+      
 ---
 
 spring:
   profiles: prod
-     
-zuul:
-  host:
-    connect-timeout-millis: 180000
-    connection-request-timeout-millis: 180000
-    socket-timeout-millis: 180000
-  routes:
-    exp-mservice1:
-      path: /exp-mservice1/**
-    exp-mservice2:
-      path: /exp-mservice2/** 
-    exp-mservice3:
-      path: /exp-mservice3/**
-    exp-mservice4:
-      path: /exp-mservice4/**
-    exp-mservice5:
-      path: /exp-mservice5/**
-    exp-mservice6:
-      path: /exp-mservice6/**
-    exp-mservice7:
-      path: /exp-mservice7/** 
- 

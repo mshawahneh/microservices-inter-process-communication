@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: "dev"
+    active: @activeProfile@
   application:    name: exp-mservice5
   main:
     banner-mode: "off"

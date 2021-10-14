@@ -26,7 +26,13 @@ logging:
     com.bzu: DEBUG
   file:    name: experiment.log
     path: /opt/exp/logs
-    max-history: 20       
+    max-history: 20 eureka:
+  client:
+    service-url:
+      defaultZone: http://@eurekaHost@:8301/eureka/
+  instance:
+    hostname: exp-mservice1
+        
 ---
 
 spring:
@@ -44,12 +50,6 @@ spring:
      
   kafka:    bootstrap-servers: localhost:9092    consumer:      group-id: dpms-group
       
-eureka:
-  client:
-    service-url:
-      defaultZone: http://@eurekaHost@:8301/eureka/
-  instance:
-    hostname: exp-mservice1 
 ---
 
 spring:
@@ -65,12 +65,5 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: true
     show-sql: true
-    database: postgresql
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://@eurekaHost@:8301/eureka/
-  instance:
-    hostname: exp-mservice1     
+    database: postgresql  
      
